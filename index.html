@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MAHTS.IO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span id="logo">MATHS.IO</span>
+    <button id="login-btn">Connexion</button>
+  </nav>
+  <div class="filters">
+    <div id="themes">
+      <button class="filter-btn" data-type="theme" data-value="Algèbre">Algèbre</button>
+      <button class="filter-btn" data-type="theme" data-value="Géométrie">Géométrie</button>
+      <button class="filter-btn" data-type="theme" data-value="Analyse">Analyse</button>
+      <button class="filter-btn" data-type="theme" data-value="Probabilité">Probabilité</button>
+      <button class="filter-btn" data-type="theme" data-value="Statistiques">Statistiques</button>
+    </div>
+    <div id="levels">
+      <button class="filter-btn" data-type="level" data-value="6e">6e</button>
+      <button class="filter-btn" data-type="level" data-value="5e">5e</button>
+      <button class="filter-btn" data-type="level" data-value="4e">4e</button>
+      <button class="filter-btn" data-type="level" data-value="3e">3e</button>
+      <button class="filter-btn" data-type="level" data-value="2nd">2nd</button>
+      <button class="filter-btn" data-type="level" data-value="1e">1e</button>
+      <button class="filter-btn" data-type="level" data-value="Tales">Tales</button>
+      <button class="filter-btn" data-type="level" data-value="L1">L1</button>
+      <button class="filter-btn" data-type="level" data-value="L2">L2</button>
+      <button class="filter-btn" data-type="level" data-value="L3">L3</button>
+      <button class="filter-btn" data-type="level" data-value="Prépa">Prépa</button>
+    </div>
+  </div>
+  <div id="resources">
+    <!-- UNE RESSOURCE PAR NIVEAU, COHERENTE -->
+    <div class="resource" data-theme="Algèbre" data-level="6e">
+        <h2>Calcul mental (6e)</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">6e</span>
+            <span class="tag" data-type="theme">Algèbre</span>
+        </div>
+        <p>Premiers pas avec les opérations de base et astuces de calcul mental.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Géométrie" data-level="5e">
+        <h2>Les triangles et leurs propriétés</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">5e</span>
+            <span class="tag" data-type="theme">Géométrie</span>
+        </div>
+        <p>Découvre les différents types de triangles et leurs particularités.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Statistiques" data-level="4e">
+        <h2>Introduction aux statistiques</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">4e</span>
+            <span class="tag" data-type="theme">Statistiques</span>
+        </div>
+        <p>Réaliser des tableaux et lire des graphiques pour comprendre des données.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Géométrie" data-level="3e">
+        <h2>Théorème de Pythagore</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">3e</span>
+            <span class="tag" data-type="theme">Géométrie</span>
+        </div>
+        <p>Utilisation et démonstration du célèbre théorème.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Analyse" data-level="2nd">
+        <h2>Fonctions numériques</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">2nd</span>
+            <span class="tag" data-type="theme">Analyse</span>
+        </div>
+        <p>Définition, représentation, et utilisation des fonctions en seconde.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Algèbre" data-level="1e">
+        <h2>Equations du second degré</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">1e</span>
+            <span class="tag" data-type="theme">Algèbre</span>
+        </div>
+        <p>Résolution de l’équation ax²+bx+c=0 et discriminant.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Algèbre" data-level="Tales">
+        <h2>Matrices</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">Tales</span>
+            <span class="tag" data-type="theme">Algèbre</span>
+        </div>
+        <p>Introduction aux matrices. Addition, multiplication, déterminant...</p>
+        <a class="btn-red" href="matrices.html">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Probabilité" data-level="L1">
+        <h2>Probabilités et variables aléatoires</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">L1</span>
+            <span class="tag" data-type="theme">Probabilité</span>
+        </div>
+        <p>Notions de variable aléatoire, loi de probabilité, espérance mathématique.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Algèbre" data-level="L2">
+        <h2>Espaces vectoriels</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">L2</span>
+            <span class="tag" data-type="theme">Algèbre</span>
+        </div>
+        <p>Définition, exemples, sous-espaces, bases et dimension.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Analyse" data-level="L3">
+        <h2>Séries numériques</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">L3</span>
+            <span class="tag" data-type="theme">Analyse</span>
+        </div>
+        <p>Séries convergentes et divergentes, critères de convergence.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+
+    <div class="resource" data-theme="Algèbre" data-level="Prépa">
+        <h2>Diagonalisation</h2>
+        <div class="tags">
+            <span class="tag" data-type="level">Prépa</span>
+            <span class="tag" data-type="theme">Algèbre</span>
+        </div>
+        <p>Les bases de la diagonalisation de matrices et polynôme caractéristique.</p>
+        <a class="btn-red" href="#">Accéder à la ressource</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

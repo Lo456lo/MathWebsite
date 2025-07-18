@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 12px 24px;
+}
+#logo {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+#login-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.filters {
+  margin: 36px 25px 20px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+#themes, #levels {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #f8f8f8;
+  border: #222 1px solid;
+  border-radius: 18px;
+  padding: 7px 17px;
+  font-size: 0.98em;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  color: #222;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 3px rgba(150,150,150,0.07);
+}
+.filter-btn.active {
+  background: #d00;
+  color: #fff;
+  box-shadow: 0 2px 11px rgba(220,0,0,0.18);
+  font-weight: bold;
+}
+#resources {
+  margin: 25px auto;
+  max-width: 800px;
+}
+.resource {
+  background: #fff;
+  border-radius: 15px;
+  padding: 28px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.06);
+}
+.resource h2 {
+  font-size: 2.3em;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+.tags {
+  margin-bottom: 16px;
+}
+.tag {
+  display: inline-block;
+  background: #eee;
+  color: #222;
+  border: #222 1px solid;
+  border-radius: 12px;
+  padding: 2px 14px 2px 14px;
+  margin-right: 6px;
+  font-size: 1em;
+  margin-bottom: 3px;
+  transition: background 0.23s, color 0.23s;
+  box-shadow: 0 1px 3px rgba(150,150,150,0.09);
+}
+.tag.red {
+  background: #d00;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 7px rgba(220,0,0,0.10);
+}
+.btn-red {
+  display: inline-block;
+  margin-top: 10px;
+  background: #d00;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-size: 1.1em;
+  border: none;
+  transition: background 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 7px rgba(220,0,0,0.12);
+}
+.btn-red:hover {
+  background: #b00;
+}
+@media (max-width:600px) {
+  .resource {
+    padding: 15px 6vw;
+  }
+  nav {
+    padding: 8px 4vw;
+  }
+  #resources {
+    margin: 13px auto;
+    max-width: 96vw;
+  }
+}
