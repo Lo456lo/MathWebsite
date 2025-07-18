@@ -32,11 +32,11 @@ filterBtns.forEach(btn => {
 
 function filterResources() {
   resources.forEach(res => {
-    const theme = res.dataset.theme;
-    const level = res.dataset.level;
+    const theme = res.dataset.theme ? res.dataset.theme.split(' ') : []; // Cela permets de sélectionner plusieurs thèmes d’une ressource sous forme de tableau
+    const levels = res.dataset.level ? res.dataset.level.split(' ') : []; // Cela permets de sélectionner plusieurs niveaux  d’une ressource sous forme de tableau (ex : ["Tales", "L1", "Prépa"]).
     let show = true;
-    if (selectedTheme && theme !== selectedTheme) show = false;
-    if (selectedLevel && level !== selectedLevel) show = false;
+    if (selectedTheme && !theme.includes(selectedTheme)) show = false; // on passe à une fonction qui vérifie si le thème est inclus
+    if (selectedLevel && !levels.includes(selectedLevel)) show = false; // on passe à une fonction qui vérifie si le niveau est inclus
     res.style.display = show ? "" : "none";
   });
 }
