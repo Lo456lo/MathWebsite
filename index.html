@@ -7,10 +7,47 @@
 </head>
 <body>
   <nav>
-    <span id="logo">MATHS.IO</span>
-    <button id="login-btn">Connexion</button>
+    <span id="logo" style="font-weight:bold; font-size:1.2em; letter-spacing:1px; vertical-align:middle;">MATHS.IO</span>
+    <div style="display:flex; align-items:center; gap:10px; margin-left:auto;">
+      <button id="login-btn">Connexion</button>
+      <button id="darkmode-toggle" title="Activer/désactiver le mode sombre" style="background:none; border:none; cursor:pointer; padding:0; width:38px; height:38px; display:flex; align-items:center; justify-content:center;">
+        <span id="darkmode-icon" style="display:inline-block; width:28px; height:28px;"></span>
+      </button>
+    </div>
   </nav>
   <div class="filters">
+  <!-- Modale de gestion des rubriques -->
+  <div id="manage-categories-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.25); z-index:1000; align-items:center; justify-content:center;">
+    <div class="modal-content" style="background:#fff; color:#222; border-radius:14px; padding:32px 28px; min-width:320px; max-width:90vw; box-shadow:0 8px 32px rgba(0,0,0,0.18); position:relative;">
+      <button id="close-categories-modal" style="position:absolute; top:10px; right:14px; background:none; border:none; font-size:1.5em; cursor:pointer; color:#d00;">&times;</button>
+      <h2 style="margin-top:0;">Gérer les rubriques</h2>
+      <div>
+        <h3>Thèmes</h3>
+        <ul id="themes-list" style="padding-left:18px; min-height:24px;"></ul>
+        <input id="new-theme-input" type="text" placeholder="Nouveau thème" style="margin-right:8px;">
+        <button id="add-theme-btn" style="background:#d00; color:#fff; border:none; border-radius:6px; padding:5px 13px; font-weight:bold; cursor:pointer;">Ajouter</button>
+      </div>
+      <div style="margin-top:22px;">
+        <h3>Niveaux</h3>
+        <ul id="levels-list" style="padding-left:18px; min-height:24px;"></ul>
+        <input id="new-level-input" type="text" placeholder="Nouveau niveau" style="margin-right:8px;">
+        <button id="add-level-btn" style="background:#d00; color:#fff; border:none; border-radius:6px; padding:5px 13px; font-weight:bold; cursor:pointer;">Ajouter</button>
+      </div>
+      <hr style="margin:28px 0 18px 0;">
+      <section id="courses-section">
+        <h3>Gestion des cours</h3>
+        <ul id="courses-list" style="min-height:24px;"></ul>
+        <form id="add-course-form" style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+          <input id="course-title" type="text" placeholder="Titre du cours" required />
+          <input id="course-desc" type="text" placeholder="Description" />
+          <input id="course-link" type="text" placeholder="Lien (URL)" />
+          <div id="course-themes-select" style="min-height:24px;"></div>
+          <div id="course-levels-select" style="min-height:24px;"></div>
+          <button type="submit">Ajouter le cours</button>
+        </form>
+      </section>
+    </div>
+  </div>
     <div id="themes">
       <button class="filter-btn" data-type="theme" data-value="Algèbre">Algèbre</button>
       <button class="filter-btn" data-type="theme" data-value="Géométrie">Géométrie</button>
@@ -32,8 +69,10 @@
       <button class="filter-btn" data-type="level" data-value="Prépa">Prépa</button>
     </div>
   </div>
+  <div id="courses-dynamic" style="max-width:800px; margin:30px auto 0 auto;"></div>
   <div id="resources">
     <!-- UNE RESSOURCE PAR NIVEAU AFIN DE TESTER LE FILTRE -->
+
     <div class="resource" data-theme="Algèbre" data-level="6e">
         <h2>Calcul mental (6e)</h2>
         <div class="tags">
@@ -98,6 +137,8 @@
         <h2>Matrices</h2>
         <div class="tags">
             <span class="tag" data-type="level">Tales</span>
+            <span class="tag" data-type="level">L1</span>
+            <span class="tag" data-type="level">Prépa</span>
             <span class="tag" data-type="theme">Algèbre</span>
         </div>
         <p>Introduction aux matrices. Addition, multiplication, déterminant...</p>

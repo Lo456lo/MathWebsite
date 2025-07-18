@@ -2,6 +2,62 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #fff;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #181818;
+  color: #f2f2f2;
+}
+
+body.dark-mode nav {
+  background: #232323;
+}
+
+body.dark-mode #login-btn {
+  background: #fff;
+  color: #181818;
+}
+
+body.dark-mode .filter-btn {
+  background: #232323;
+  color: #f2f2f2;
+  border-color: #888;
+}
+body.dark-mode .filter-btn.active {
+  background: #d00;
+  color: #fff;
+}
+body.dark-mode .filter-btn:hover {
+  background: #333;
+}
+
+body.dark-mode .resource {
+  background: #232323;
+  color: #f2f2f2;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.18);
+}
+
+body.dark-mode .resource:hover {
+  box-shadow: 0 8px 24px rgba(220,0,0,0.28), 0 2px 7px rgba(0,0,0,0.18);
+}
+
+body.dark-mode .tag {
+  background: #333;
+  color: #f2f2f2;
+  border-color: #888;
+}
+body.dark-mode .tag.red {
+  background: #d00;
+  color: #fff;
+}
+
+body.dark-mode .btn-red {
+  background: #d00;
+  color: #fff;
+}
+body.dark-mode .btn-red:hover {
+  background: #b00;
 }
 nav {
   display: flex;
@@ -41,10 +97,16 @@ nav {
   padding: 7px 17px;
   font-size: 0.98em;
   cursor: pointer;
-  transition: background 0.25s, color 0.25s;
+  transition: background 0.25s, color 0.25s, box-shadow 0.22s, transform 0.22s;
   color: #222;
   margin-bottom: 5px;
   box-shadow: 0 1px 3px rgba(150,150,150,0.07);
+}
+
+.filter-btn:hover {
+  background: #f2eaea;
+  box-shadow: 0 2px 8px rgba(220,0,0,0.10);
+  transform: scale(1.07);
 }
 .filter-btn.active {
   background: #d00;
@@ -62,6 +124,23 @@ nav {
   padding: 28px 30px;
   margin-bottom: 30px;
   box-shadow: 0 2px 7px rgba(0,0,0,0.06);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.25s, transform 0.25s;
+}
+
+.resource:hover {
+  box-shadow: 0 8px 24px rgba(220,0,0,0.18), 0 2px 7px rgba(0,0,0,0.06);
+  transform: scale(1.025);
+}
+
+.resource[style*="display: none"] {
+  opacity: 0;
+  transform: scale(0.97);
+  pointer-events: none;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .resource h2 {
   font-size: 2.3em;
@@ -81,8 +160,14 @@ nav {
   margin-right: 6px;
   font-size: 1em;
   margin-bottom: 3px;
-  transition: background 0.23s, color 0.23s;
+  transition: background 0.23s, color 0.23s, box-shadow 0.23s, transform 0.23s;
   box-shadow: 0 1px 3px rgba(150,150,150,0.09);
+}
+
+.tag:hover {
+  background: #f2eaea;
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px rgba(220,0,0,0.10);
 }
 .tag.red {
   background: #d00;
@@ -101,12 +186,15 @@ nav {
   text-decoration: none;
   font-size: 1.1em;
   border: none;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.22s, transform 0.22s;
   cursor: pointer;
   box-shadow: 0 2px 7px rgba(220,0,0,0.12);
 }
+
 .btn-red:hover {
   background: #b00;
+  box-shadow: 0 4px 16px rgba(220,0,0,0.18);
+  transform: scale(1.06);
 }
 @media (max-width:600px) {
   .resource {
